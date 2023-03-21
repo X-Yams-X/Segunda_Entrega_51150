@@ -1,11 +1,14 @@
-import {BarraNavegacion} from "./components/navbar/Navbar.js"
-import {ItemListContainer} from "./components/body/ItemListContainer.js";
+import {BarraNavegacion} from "./components/navbar/Navbar.js";
+import {ItemListContainer} from "./components/Item/ItemListContainer.js";
+
 
 function App() {
   return (
     <>
       <BarraNavegacion/>
-      <ItemListContainer message={"Esto es un mensaje"}/>
+      <br></br>
+      <br></br>
+      <ItemListContainer/>
     </>
   );
 }
