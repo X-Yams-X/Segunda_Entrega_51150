@@ -1,22 +1,30 @@
 import { Nav,NavDropdown } from "react-bootstrap";
+import {useState, useEffect} from 'react';
 
 export const Menu = () => {
+
+  const [categories, setCategory] = useState([]);
+
+  const urlAPI = 'https://fakestoreapi.com/products/categories'
+
+  const fetchData =  () => {
+    try {
+      fetch(urlAPI)
+      .then(Response => Response.json())
+      .then(json => {
+        setCategory(json);
+      })
+    } catch (error) {
+      console.log("error", error);
+    }
+  };  
+
+  useEffect(() => {fetchData()});
+
   return (
     <Nav>
-      <NavDropdown title="Sedán" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#">Ford</NavDropdown.Item>
-        <NavDropdown.Item href="#">Nissan</NavDropdown.Item>
-        <NavDropdown.Item href="#">Ferrari</NavDropdown.Item>
-      </NavDropdown>
-      <NavDropdown title="SUV" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#">KIA</NavDropdown.Item>
-        <NavDropdown.Item href="#">Volvo</NavDropdown.Item>
-        <NavDropdown.Item href="#">Tiggo</NavDropdown.Item>
-      </NavDropdown>
-      <NavDropdown title="Camioneta" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#">Ford</NavDropdown.Item>
-        <NavDropdown.Item href="#">Jeep</NavDropdown.Item>
-        <NavDropdown.Item href="#">RAM</NavDropdown.Item>
+      <NavDropdown title="Category">
+       {categories.map(category => <NavDropdown.Item href="/category/#" key={category}>{category}</NavDropdown.Item>)}
       </NavDropdown>
     </Nav>
   );
