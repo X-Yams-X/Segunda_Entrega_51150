@@ -14,4 +14,4 @@ Más Información [Bootstrap - React](https://react-bootstrap.netlify.app/).
 Más Información [Icons - React](https://react-icons.github.io/).
 
 ##GIF
-![](.gif)
+![](https://github.com/X-Yams-X/Segunda_Entrega_51150/blob/main/public/Gif/Entrega_dos.gif)
