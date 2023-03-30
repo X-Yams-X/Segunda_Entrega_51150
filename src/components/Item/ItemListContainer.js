@@ -1,30 +1,16 @@
 import { Container, Row} from "react-bootstrap";
-import { useState } from "react";
-import {Item} from "./item.js";
+import { DataFetch } from "../../services/DataFetch.js";
+import { Item } from "./item.js";
+import { useParams } from "react-router";
 
 export const ItemListContainer = () => {
-  const [products, setProducts] = useState([]);
-  //const urlAPI = "https://fakestoreapi.com/products?limit=8";
-  const urlJson = "../../data/DataAPI.json";
-
-  //*Método donde llamamos json Local(Promise Clase 6) -> Se pasara a una API
-
-  const fetchData =  () => {
-    try {
-      fetch(urlJson)
-      .then(Response => Response.json())
-      .then(json => setProducts(json))
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
-  
-  setInterval(fetchData(),10000); //!Después cambiar por useEffect
-  
+const { id } = useParams();
+  const urlAPI = id ? "products/category/"+id : "products?limit=12";
+  const {response} = DataFetch(urlAPI);
   return (
     <Container>
       <Row className="justify-content-md-center">
-      {products.map(product => <Item key={product.id} {...product}/>)}
+      {response?.map(product => <Item key={product.id} {...product}/>)}
       </Row>
     </Container>
   );

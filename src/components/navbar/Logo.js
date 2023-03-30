@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <Navbar.Brand href="/">
       <img
-        src="../../assets/icons/logo.png"
+        src="#"
         width="40"
         height="40"
         className="d-inline-block align-top"

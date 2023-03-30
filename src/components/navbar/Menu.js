@@ -24,7 +24,7 @@ export const Menu = () => {
   return (
     <Nav>
       <NavDropdown title="Category">
-       {categories.map(category => <NavDropdown.Item href="/category/#" key={category}>{category}</NavDropdown.Item>)}
+       {categories.map(category =><NavDropdown.Item href={('category/'+category)} key={category}>{category}</NavDropdown.Item>)}
       </NavDropdown>
     </Nav>
   );

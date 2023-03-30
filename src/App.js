@@ -1,5 +1,5 @@
 import {BarraNavegacion} from "./components/navbar/Navbar.js";
-import {ItemListContainer} from "./components/Item/ItemListContainer.js";
+import { ItemListContainer } from "./components/Item/ItemListContainer.js";
 import { ItemDetailsContainer } from "./components/itemDetail/ItemDetailsContainer.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 

@@ -3,5 +3,5 @@ import { ItemDetail } from "./ItemDetail";
 
 export const ItemDetailsContainer = () => {
   const { id } = useParams();
-  return (<ItemDetail id={id}></ItemDetail>);
+  return (<ItemDetail id_item = {id}></ItemDetail>);
 };

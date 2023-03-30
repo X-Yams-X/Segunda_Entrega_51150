@@ -2,7 +2,6 @@ import {Button, Card} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 
 export const Item = ({id, category, title, image, price}) => {
-  
   return (
     <Card style={{ width: "18rem", margin: 10 }}>
       <Card.Header as="h5" className="text-center">
